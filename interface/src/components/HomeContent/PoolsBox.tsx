@@ -1,17 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ethers } from "ethers";
 import styled from "styled-components";
-import doubleToken from "../../../public/images/logo-double.png";
+import { useContractRead } from "wagmi";
+import doubleToken from "../../assets/images/logo-double.png";
 import { Box } from "./Box";
 import { BigInfoLabel, TextM } from "../../theme/texts";
 import { SoftPoolIndicator, HardPoolIndicator } from "../SoftHardIndicators";
-import { useContractRead } from "wagmi";
 import {
   hardPoolAddress,
   poolAbi,
   softPoolAddress,
 } from "../../artifacts/StakePools";
-import { useState } from "react";
-import { ethers } from "ethers";
 
 const PoolsBoxWrapper = styled(Box)`
   display: flex;
@@ -154,9 +154,7 @@ export default function PoolsBox() {
         <SoftPool to="/soft-pool">
           <PoolLabel>
             <img src={doubleToken} width="80px" />
-            <PoolInfo style={{ marginLeft: "14px" }}>
-              $STK / $STK
-            </PoolInfo>
+            <PoolInfo style={{ marginLeft: "14px" }}>$STK / $STK</PoolInfo>
           </PoolLabel>
           <PoolInfo>
             {(softPoolYield * 60 * 60).toFixed(2)}% /{" "}
@@ -168,9 +166,7 @@ export default function PoolsBox() {
         <HardPool to="/hard-pool">
           <PoolLabel>
             <img src={doubleToken} width="80px" />
-            <PoolInfo style={{ marginLeft: "14px" }}>
-              $STK / $STK
-            </PoolInfo>
+            <PoolInfo style={{ marginLeft: "14px" }}>$STK / $STK</PoolInfo>
           </PoolLabel>
           <PoolInfo>
             {(hardPoolYield * 60 * 60).toFixed(2)}% /{" "}

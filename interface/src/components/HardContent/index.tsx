@@ -18,7 +18,7 @@ import { TextM, Text4XL, BigInfoLabel } from "../../theme/texts";
 import { Box } from "../HomeContent/Box";
 import { Input } from "../Input";
 import { LoadingButton, PrimaryButton, SecondaryButton } from "../Button";
-import doubleToken from "../../../public/images/logo-double.png";
+import doubleToken from "../../assets/images/logo-double.png";
 import TokensStakedModal from "../Modal/TokensStakedModal";
 import WinModal from "../Modal/WinModal";
 import LossModal from "../Modal/LossModal";

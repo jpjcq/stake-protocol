@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import stakeLogo from "../../../public/images/brick-stake-logo.png"
+import stakeLogo from "../../assets/images/brick-stake-logo.png"
 import styled from "styled-components";
 
 const TextLogo = styled.span`
