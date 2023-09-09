@@ -17,7 +17,7 @@ async function main() {
 
   const stakeCoinAddress = await stakeCoin.getAddress();
 
-  const stakeSoftPool = await ethers.deployContract("StakeSoftPool", [
+  const stakeSoftPool = await ethers.deployContract("StakePool", [
     lossPercentagePerSec,
     yieldPercentagePerSec,
     minimumStakeDuration,
@@ -25,7 +25,7 @@ async function main() {
     stakeTreasury.address,
   ]);
 
-  const stakeHardPool = await ethers.deployContract("StakeHardPool", [
+  const stakeHardPool = await ethers.deployContract("StakePool", [
     lossPercentagePerSec,
     yieldPercentagePerSec,
     minimumStakeDuration,
@@ -48,6 +48,7 @@ async function main() {
 
   console.log(`Stake Coin address: ${stakeCoinAddress}`);
   console.log(`Stake Soft Pool address: ${stakeSoftPoolAddress}`);
+  console.log(`Stake Soft Pool address: ${stakeHardPoolAddress}`);
 
   // Personal reminder
   console.log("\n*** DON'T FORGET TO RESET NONCE IN METAMASK ***\n");

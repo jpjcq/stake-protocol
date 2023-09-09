@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx hardhat compile && npx hardhat --network hardhat test",
+    "testnetDeploy": "npx hardhat clean && npx hardhat compile && npx hardhat run --network testnet scripts/deploy.ts",
     "localDeploy": "npx hardhat clean && npx hardhat compile && npx hardhat run --network localhost scripts/deploy.ts"
   },
   "keywords": [],
