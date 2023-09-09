@@ -7,7 +7,7 @@ ERC-20 token with a whitelist minting procedure. It also enables the creation
 of liquidity mining pools where rewards increase gradually, along with the
 associated risks. Currently configured on BSC Chain, but can be used on any EVM blockchain.
 
-<!-- This project serves as a portfolio to demonstrate my skills in web
+<!-- This project serves as a portfolio to demonstrate my skills in web3
 development, particularly in React and Solidity. -->
 
 ## Features
