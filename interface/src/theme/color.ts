@@ -7,7 +7,7 @@ export const color = {
   brick50: "#B83F3D",
   brick100: "#A03534",
   brick200: "#712322",
-  brick300:"#9B6B66",
+  brick300: "#9B6B66",
   brick400: "#5b1b1a",
   brick500: "#451212",
   brick600: "#310a0a",
@@ -22,4 +22,13 @@ export const color = {
   validationRed100: "#941A1A",
   backgroundGradient50: "#74CBF3",
   backgroundGradient100: "#CAEBFB",
+};
+
+export const colors = {
+  background: "#0D1116",
+  lightBackground: "#161B22",
+  border: "#30363D",
+  blueLogo: "#1352F0",
+  secondaryFont: "#9CABBB",
+  white: "#FFF",
 };

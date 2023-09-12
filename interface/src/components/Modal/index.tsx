@@ -14,7 +14,7 @@ export default function Modal({
   children,
   isModalOpen,
   closingFunction,
-  afterCloseFunction
+  afterCloseFunction,
 }: ModalProps) {
   const theme = useTheme() as ThemeType;
   const customStyles = {
@@ -25,13 +25,14 @@ export default function Modal({
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      backgroundColor: theme.color.cream100,
-      color: theme.color.brick700,
-      zIndex: 99999
+      backgroundColor: theme.colors.lightBackground,
+      color: theme.colors.secondaryFont,
+      zIndex: 99999,
+      border: theme.colors.border,
     },
     overlay: {
       background: "rgba(13, 17, 28, 0.72)",
-      zIndex: 100000
+      zIndex: 100000,
     },
   };
 

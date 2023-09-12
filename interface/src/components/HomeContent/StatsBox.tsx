@@ -35,7 +35,7 @@ const StyledBigStat = styled(Text)`
     font-size: 30px;
     font-weight: 900;
   }
-  color: ${({ theme }) => theme.color.brick400};
+  color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
 const StyledBigInfoLabel = styled(Text)`
@@ -47,23 +47,23 @@ const StyledBigInfoLabel = styled(Text)`
     font-size: 12px;
     font-weight: 700;
   }
-  color: ${({ theme }) => theme.color.brick300};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 function getReducedNumber(input: number | string) {
   const number = Number(input);
 
-  if(number < 10_000) {
+  if (number < 10_000) {
     return `${number}`;
   }
   if (number >= 10_000) {
-    return `${(Math.round(number / 1000))}K`;
+    return `${Math.round(number / 1000)}K`;
   }
   if (number >= 1_000_000) {
-    return `${(Math.round(number / 1_000_000))}M`;
+    return `${Math.round(number / 1_000_000)}M`;
   }
   if (number >= 1_000_000_000) {
-    return `${(Math.round(number / 1_000_000_000))}B`;
+    return `${Math.round(number / 1_000_000_000)}B`;
   }
 }
 

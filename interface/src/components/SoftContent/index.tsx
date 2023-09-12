@@ -18,7 +18,7 @@ import { TextM, Text4XL, BigInfoLabel } from "../../theme/texts";
 import { Box } from "../HomeContent/Box";
 import { Input } from "../Input";
 import { LoadingButton, PrimaryButton, SecondaryButton } from "../Button";
-import doubleToken from "../../assets/images/logo-double.png";
+import doubleToken from "../../assets/images/double-logo.png";
 import TokensStakedModal from "../Modal/TokensStakedModal";
 import WinModal from "../Modal/WinModal";
 import LossModal from "../Modal/LossModal";
@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
 `;
 
 const PoolTitle = styled(Text4XL)`
-  color: ${({ theme }) => theme.color.brick600};
+  color: ${({ theme }) => theme.colors.secondaryFont};
   font-weight: 800;
 `;
 
@@ -39,7 +39,7 @@ const PoolFullLogo = styled.div`
 `;
 
 const PoolInfo = styled(TextM)`
-  color: ${({ theme }) => theme.color.brick400};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   white-space: nowrap;
   margin-left: 14px !important;
@@ -60,11 +60,11 @@ const Row = styled.div`
 `;
 
 const StyledBigInfoLabel = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick300};
+  color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
 const BigInfoData = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick500};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const InputWrapper = styled.div`

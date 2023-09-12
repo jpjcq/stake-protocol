@@ -29,20 +29,20 @@ const MintContentWrapper = styled(Box)`
   justify-content: center;
   align-items: center;
   padding: 0 80px;
-  background: transparent;
   text-align: center;
+  border: none;
 `;
 
 const Title = styled(Text5XL)`
-  font-weight: 900;
-  color: ${({ theme }) => theme.color.brick200};
+  font-weight: 800;
+  color: ${({ theme }) => theme.colors.secondaryFont};
   margin-bottom: 30px !important;
 `;
 
 const PrimaryButtonLink = styled(Link)`
   width: fit-content;
-  background-color: ${({ theme }) => theme.color.brick50};
-  color: ${({ theme }) => theme.color.cream50};
+  background-color: ${({ theme }) => theme.colors.blueLogo};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   padding: 18px 77px;
   border-radius: ${({ theme }) => theme.borderRadius.base};
@@ -163,7 +163,7 @@ export default function MintContent() {
       <FlexCenter>
         {isMintLoading ? (
           <MintContentWrapper>
-            <SyncLoader color={theme.color.brick500} size={20} />
+            <SyncLoader color={theme.colors.secondaryFont} size={20} />
           </MintContentWrapper>
         ) : (
           <MintContentWrapper>

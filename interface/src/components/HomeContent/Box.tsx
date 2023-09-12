@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  background-color: ${({ theme }) => theme.color.cream100};
+  border: 1px solid ${({theme}) => theme.colors.border};
+  background-color: ${({theme}) => theme.colors.lightBackground};;
   border-radius: ${({ theme }) => theme.borderRadius.md};
 `;

@@ -10,7 +10,7 @@ const LinkWrapper = styled.div`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: ${({ theme }) => theme.color.brick300};
+  color:#9CABBB;
   font-size: 1rem;
   font-weight: 700;
   margin-right: 30px;

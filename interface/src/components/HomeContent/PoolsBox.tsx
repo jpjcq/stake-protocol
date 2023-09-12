@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ethers } from "ethers";
 import styled from "styled-components";
 import { useContractRead } from "wagmi";
-import doubleToken from "../../assets/images/logo-double.png";
+import doubleToken from "../../assets/images/double-logo.png";
 import { Box } from "./Box";
 import { BigInfoLabel, TextM } from "../../theme/texts";
 import { SoftPoolIndicator, HardPoolIndicator } from "../SoftHardIndicators";
@@ -36,11 +36,11 @@ const Pools = styled.div`
 `;
 
 const StyledBigInfoLabel = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick300};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const HardPool = styled(Link)`
-  background-color: ${({ theme }) => theme.color.cream50};
+  background-color: ${({ theme }) => theme.colors.background};
   @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -48,6 +48,7 @@ const HardPool = styled(Link)`
   padding: 25px 20px;
   align-items: center;
   text-align: center;
+  border: 1px solid #30363d;
   border-radius: ${({ theme }) => theme.borderRadius.md};
   cursor: pointer;
   transition: 0.1255s scale ease-in-out;
@@ -59,7 +60,7 @@ const HardPool = styled(Link)`
 `;
 
 const SoftPool = styled(Link)`
-  background-color: ${({ theme }) => theme.color.cream50};
+  background-color: ${({ theme }) => theme.colors.background};
   @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -67,6 +68,7 @@ const SoftPool = styled(Link)`
   padding: 25px 20px;
   align-items: center;
   text-align: center;
+  border: 1px solid #30363d;
   border-radius: ${({ theme }) => theme.borderRadius.md};
   cursor: pointer;
   transition: 0.1255s scale ease-in-out;
@@ -83,8 +85,8 @@ const PoolLabel = styled.div`
 `;
 
 const PoolInfo = styled(TextM)`
-  color: ${({ theme }) => theme.color.brick400};
-  font-weight: 700;
+  color: #9cabbb;
+  font-weight: 500;
   white-space: nowrap;
 `;
 

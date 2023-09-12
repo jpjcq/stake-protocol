@@ -3,7 +3,7 @@ import {
   ThemeProvider as StyledComponentsThemeProvider,
   createGlobalStyle,
 } from "styled-components";
-import { color } from "./color";
+import { color, colors } from "./color";
 import boxShadow from "./boxShadow";
 import borderRadius from "./borderRadius";
 
@@ -22,6 +22,7 @@ const baseTheme = { boxShadow, borderRadius, BREAKPOINT };
 const theme = {
   ...baseTheme,
   color,
+  colors,
 };
 
 export type ThemeType = typeof theme;

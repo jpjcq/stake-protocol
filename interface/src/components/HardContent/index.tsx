@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
 `;
 
 const PoolTitle = styled(Text4XL)`
-  color: ${({ theme }) => theme.color.brick600};
+  color: ${({ theme }) => theme.colors.secondaryFont};
   font-weight: 800;
 `;
 
@@ -39,7 +39,7 @@ const PoolFullLogo = styled.div`
 `;
 
 const PoolInfo = styled(TextM)`
-  color: ${({ theme }) => theme.color.brick400};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   white-space: nowrap;
   margin-left: 14px !important;
@@ -60,11 +60,11 @@ const Row = styled.div`
 `;
 
 const StyledBigInfoLabel = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick300};
+  color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
 const BigInfoData = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick500};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const InputWrapper = styled.div`

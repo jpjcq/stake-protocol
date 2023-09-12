@@ -3,7 +3,7 @@ import FullLogo from "./FullLogo";
 import Links from "./Links";
 
 const NavbarWrapper = styled.header`
-  background: linear-gradient(90deg, #74cbf3, #caebfb);
+  backdrop-filter: blur(10px); /* Apply blur */
   position: fixed;
   top: 0;
   right: 0;

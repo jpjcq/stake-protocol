@@ -4,7 +4,7 @@ import { ThemeType } from "../../theme";
 
 export const PrimaryButton = styled.button`
   width: fit-content;
-  background-color: ${({ theme }) => theme.color.brick50};
+  background-color: ${({ theme }) => theme.colors.blueLogo};
   color: ${({ theme }) => theme.color.cream50};
   font-weight: 700;
   padding: 18px 77px;
@@ -20,8 +20,8 @@ export const PrimaryButton = styled.button`
 
 export const SmallPrimaryButton = styled.button`
   width: fit-content;
-  background-color: ${({ theme }) => theme.color.brick50};
-  color: ${({ theme }) => theme.color.cream50};
+  background-color: ${({ theme }) => theme.colors.blueLogo};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   padding: 9px 30px;
   border-radius: ${({ theme }) => theme.borderRadius.base};
@@ -35,8 +35,8 @@ export const SmallPrimaryButton = styled.button`
 `;
 
 export const SecondaryButton = styled.button`
-  background-color: #ded6b6;
-  color: ${({ theme }) => theme.color.olive300};
+  background-color: ${({theme}) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   padding: 18px 45px;
   border-radius: ${({ theme }) => theme.borderRadius.base};
@@ -53,7 +53,7 @@ export function LoadingButton() {
   const theme = useTheme() as ThemeType;
   return (
     <PrimaryButton>
-      <SyncLoader color={theme.color.brick500} size={5} />
+      <SyncLoader color={theme.colors.secondaryFont} size={5} />
     </PrimaryButton>
   );
 }

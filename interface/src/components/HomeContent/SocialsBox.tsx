@@ -15,7 +15,7 @@ const SocialsBoxWrapper = styled(Box)`
 `;
 
 const StyledBigInfoLabel = styled(BigInfoLabel)`
-  color: ${({ theme }) => theme.color.brick300};
+  color: ${({theme}) => theme.colors.white};
 `;
 
 const Info = styled.div`
@@ -26,7 +26,7 @@ const Info = styled.div`
 `;
 
 const TwitterHandle = styled(Text)`
-  color: ${({ theme }) => theme.color.brick400};
+  color: ${({theme}) => theme.colors.secondaryFont};
   font-weight: 900;
   @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
     font-size: 36px;
