@@ -8,13 +8,13 @@ import boxShadow from "./boxShadow";
 import borderRadius from "./borderRadius";
 
 const BREAKPOINT = {
-  xs: 396,
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  xxl: 1536,
-  xxxl: 1920,
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 425,
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
+  desktop: 1920,
 };
 
 const baseTheme = { boxShadow, borderRadius, BREAKPOINT };
@@ -39,6 +39,7 @@ export const GlobalStyles = createGlobalStyle`
   html body {
     font-family: Poppins, sans-serif;
     margin: 0 !important;
+    background: ${({ theme }) => (theme as ThemeType).colors.background};
   }
   html body .text-logo {
     font-family: Permanent Marker, cursive;

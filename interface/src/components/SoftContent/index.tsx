@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import {
   useAccount,
@@ -23,9 +23,15 @@ import TokensStakedModal from "../Modal/TokensStakedModal";
 import WinModal from "../Modal/WinModal";
 import LossModal from "../Modal/LossModal";
 import MinimumDurationModal from "../Modal/MinimumDurationModal";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import { ThemeType } from "../../theme";
 
 const ContentWrapper = styled.div`
   margin: 120px 200px 0 200px;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
+    margin: 120px 20px;
+  }
 `;
 
 const PoolTitle = styled(Text4XL)`
@@ -72,6 +78,9 @@ const InputWrapper = styled.div`
 `;
 
 export default function SoftContent() {
+  const width = useWindowWidth();
+  const theme = useTheme() as ThemeType;
+
   // Layout
   const [isStakingExpanded, setIsStakingExpanded] = useState(false);
   const [isMyPositionExpanded, setIsMyPositionExpanded] = useState(false);
@@ -379,15 +388,27 @@ export default function SoftContent() {
           Soft Risk $STK Pool
         </PoolTitle>
         <StyledBox>
-          <Row>
-            <PoolFullLogo>
-              <img src={doubleToken} width="80px" />
-              <PoolInfo>$STK / $STK</PoolInfo>
-            </PoolFullLogo>
-            <SecondaryButton onClick={handleViewPositionButton}>
-              View my positions
-            </SecondaryButton>
-          </Row>
+          {width < theme.BREAKPOINT.laptop ? (
+            <>
+              <PoolFullLogo style={{marginTop: "20px"}}>
+                <img src={doubleToken} width="80px" />
+                <PoolInfo>$STK / $STK</PoolInfo>
+              </PoolFullLogo>
+              <SecondaryButton onClick={handleViewPositionButton} style={{marginTop: "20px"}}>
+                View my positions
+              </SecondaryButton>
+            </>
+          ) : (
+            <Row>
+              <PoolFullLogo>
+                <img src={doubleToken} width="80px" />
+                <PoolInfo>$STK / $STK</PoolInfo>
+              </PoolFullLogo>
+              <SecondaryButton onClick={handleViewPositionButton}>
+                View my positions
+              </SecondaryButton>
+            </Row>
+          )}
           {getCurrentPositionStatus === "success" &&
             isMyPositionExpanded &&
             (!myPosition ? (

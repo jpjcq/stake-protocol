@@ -9,6 +9,7 @@ import {
   softPoolAddress,
 } from "../../artifacts/StakePools";
 import { ethers } from "ethers";
+import { BigInfoLabel } from "../../theme/texts";
 
 const StatsBoxWrapper = styled(Box)`
   display: flex;
@@ -16,6 +17,10 @@ const StatsBoxWrapper = styled(Box)`
   align-items: flex-start;
   grid-area: 1 / 1 / 1 / 1;
   padding: 26px 28px 36px 28px;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
+    padding: 26px 28px;
+  }
 `;
 
 const Info = styled.div`
@@ -24,30 +29,29 @@ const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
+    align-items: center;
+  }
 `;
 
 const StyledBigStat = styled(Text)`
-  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
-    font-size: 48px;
-    font-weight: 900;
-  }
-  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
+  color: ${({ theme }) => theme.colors.secondaryFont};
+  font-size: 48px;
+  font-weight: 900;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
     font-size: 30px;
     font-weight: 900;
   }
-  color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
-const StyledBigInfoLabel = styled(Text)`
-  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
-    font-size: 16px;
-    font-weight: 700;
-  }
-  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
-    font-size: 12px;
-    font-weight: 700;
-  }
+const StyledBigInfoLabel = styled(BigInfoLabel)`
   color: ${({ theme }) => theme.colors.white};
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
+    font-size: 14px !important;
+  }
 `;
 
 function getReducedNumber(input: number | string) {

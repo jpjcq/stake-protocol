@@ -24,6 +24,7 @@ export default function Modal({
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
+      maxWidth: "80%",
       transform: "translate(-50%, -50%)",
       backgroundColor: theme.colors.lightBackground,
       color: theme.colors.secondaryFont,

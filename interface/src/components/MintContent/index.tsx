@@ -37,6 +37,10 @@ const Title = styled(Text5XL)`
   font-weight: 800;
   color: ${({ theme }) => theme.colors.secondaryFont};
   margin-bottom: 30px !important;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.laptop}px) {
+    font-size: 36px !important;
+  }
 `;
 
 const PrimaryButtonLink = styled(Link)`

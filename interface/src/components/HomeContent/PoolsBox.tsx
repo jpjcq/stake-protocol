@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ethers } from "ethers";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useContractRead } from "wagmi";
 import doubleToken from "../../assets/images/double-logo.png";
 import { Box } from "./Box";
@@ -12,6 +12,8 @@ import {
   poolAbi,
   softPoolAddress,
 } from "../../artifacts/StakePools";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import { ThemeType } from "../../theme";
 
 const PoolsBoxWrapper = styled(Box)`
   display: flex;
@@ -25,6 +27,11 @@ const Labels = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
+  
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const Pools = styled.div`
@@ -41,10 +48,6 @@ const StyledBigInfoLabel = styled(BigInfoLabel)`
 
 const HardPool = styled(Link)`
   background-color: ${({ theme }) => theme.colors.background};
-  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
   padding: 25px 20px;
   align-items: center;
   text-align: center;
@@ -53,18 +56,29 @@ const HardPool = styled(Link)`
   cursor: pointer;
   transition: 0.1255s scale ease-in-out;
   text-decoration: none;
+
   &:hover {
     scale: 1.006;
     transition: 0.1255s scale ease-in-out;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    margin-bottom: 20px;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 const SoftPool = styled(Link)`
   background-color: ${({ theme }) => theme.colors.background};
-  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.lg}px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
   padding: 25px 20px;
   align-items: center;
   text-align: center;
@@ -73,9 +87,24 @@ const SoftPool = styled(Link)`
   cursor: pointer;
   transition: 0.1255s scale ease-in-out;
   text-decoration: none;
+  margin-bottom: 20px;
+
   &:hover {
     scale: 1.006;
     transition: 0.1255s scale ease-in-out;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    padding: 15px 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
@@ -88,9 +117,16 @@ const PoolInfo = styled(TextM)`
   color: #9cabbb;
   font-weight: 500;
   white-space: nowrap;
+
+  @media screen and (max-width: ${({ theme }) => theme.BREAKPOINT.tablet}px) {
+    margin: 20px 0 20px 14px !important;
+  }
 `;
 
 export default function PoolsBox() {
+  const width = useWindowWidth();
+  const theme = useTheme() as ThemeType;
+
   const [softPoolYield, setSoftPoolYield] = useState(0);
   const [softPoolRisk, setSoftPoolRisk] = useState(0);
   const [hardPoolYield, setHardPoolYield] = useState(0);
@@ -149,7 +185,9 @@ export default function PoolsBox() {
       <Labels>
         <StyledBigInfoLabel>POOL</StyledBigInfoLabel>
         <StyledBigInfoLabel>HPY% / APY%</StyledBigInfoLabel>
-        <StyledBigInfoLabel>RPH%</StyledBigInfoLabel>
+        {width > theme.BREAKPOINT.tablet && (
+          <StyledBigInfoLabel>RPH%</StyledBigInfoLabel>
+        )}
         <StyledBigInfoLabel>POOL TYPE</StyledBigInfoLabel>
       </Labels>
       <Pools>
@@ -162,7 +200,9 @@ export default function PoolsBox() {
             {(softPoolYield * 60 * 60).toFixed(2)}% /{" "}
             {(softPoolYield * 60 * 60 * 24 * 365).toFixed(2)}%
           </PoolInfo>
-          <PoolInfo>{(softPoolRisk * 60 * 60).toFixed(2)}%</PoolInfo>
+          {width > theme.BREAKPOINT.tablet && (
+            <PoolInfo>{(softPoolRisk * 60 * 60).toFixed(2)}%</PoolInfo>
+          )}
           <SoftPoolIndicator>SOFT POOL</SoftPoolIndicator>
         </SoftPool>
         <HardPool to="/hard-pool">
@@ -174,7 +214,9 @@ export default function PoolsBox() {
             {(hardPoolYield * 60 * 60).toFixed(2)}% /{" "}
             {(hardPoolYield * 60 * 60 * 24 * 365).toFixed(2)}%
           </PoolInfo>
-          <PoolInfo>{(hardPoolRisk * 60 * 60).toFixed(2)}%</PoolInfo>
+          {width > theme.BREAKPOINT.tablet && (
+            <PoolInfo>{(hardPoolRisk * 60 * 60).toFixed(2)}%</PoolInfo>
+          )}
           <HardPoolIndicator>HARD POOL</HardPoolIndicator>
         </HardPool>
       </Pools>
