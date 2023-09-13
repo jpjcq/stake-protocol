@@ -1,4 +1,5 @@
 # Stake Protocol
+<img width="1552" alt="Capture d’écran 2023-09-13 à 10 37 11" src="https://github.com/jpjcq/stake-protocol/assets/75884465/50aa8525-6106-4e33-89fc-195403b32ce8">
 
 ## Overview
 
