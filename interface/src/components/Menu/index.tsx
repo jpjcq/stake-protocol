@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import CrossIcon from "../../assets/icons/CrossIcon";
-import { StyledNavLink } from "../Navbar/Links";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { NavLink } from "react-router-dom";
 

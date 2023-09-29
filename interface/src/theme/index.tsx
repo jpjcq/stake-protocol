@@ -41,7 +41,4 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 !important;
     background: ${({ theme }) => (theme as ThemeType).colors.background};
   }
-  html body .text-logo {
-    font-family: Permanent Marker, cursive;
-  }
 `;
